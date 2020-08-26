@@ -1,0 +1,92 @@
+<h3>Create Salary</h3>
+
+<div class="container">
+
+  <div [hidden]="submitted" style="width: 300px;">
+    <form (ngSubmit)="onSubmit()">
+
+      <!-- Row First -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="name">Employee Name</label>
+            <select #select [(ngModel)]="employee3" (change)="employeeChanged(select.value)" class="form-control"
+              name="employee">
+              <option *ngFor="let employee of employees| async" [value]="employee.id">
+                {{employee.firstName}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row second -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">First Name</label>
+            <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName"
+              name="firstName">
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Salary year</label>
+            <input type="salary" class="form-control" id="salaryYear" required [(ngModel)]="salary.salaryYear"
+              name="salaryYear">
+          </div>
+        </div>
+      </div>
+
+      <!-- Row third -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Last Name</label>
+            <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName"
+              name="lastName">
+          </div>
+        </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Salary month</label>
+              <input type="text" class="form-control" id="salaryMonth" required [(ngModel)]="salary.salaryMonth"
+                name="salaryMonth">
+            </div>
+          </div>
+        </div>
+      
+
+
+      <!-- Row fourth -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">E-Mail ID</label>
+            <input type="text" class="form-control" id="emailId" required [(ngModel)]="employee.emailId" name="emailId">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Salary Amount</label>
+            <input type="text" class="form-control" id="salaryAmount" required [(ngModel)]="salary.salaryAmount"
+              name="salaryAmount">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success">Add</button>
+</div>

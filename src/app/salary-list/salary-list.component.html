@@ -1,0 +1,81 @@
+ <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Salary List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>salaryYear</th>
+          <th>salaryMonth</th>
+          <th>salaryAmount</th>
+          <th>active</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let salary of salaries | async">
+          <td>{{salary.salaryYear}}</td>
+          <td>{{salary.salaryMonth}}</td>
+          <td>{{salary.salaryAmount}}</td>
+          <td>
+            <button (click)="deleteSalary(salary.id)" class="btn btn-danger">Delete</button>
+            <button (click)="updateSalary(salary.id)" class="btn btn-success" style="margin-left: 10px">Update</button>
+            <button (click)="salaryDetails(salary.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<!-- 
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Salary List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>EmployeeName</th>
+          <th>salaryYear</th>
+          <th>salaryMonth</th>
+          <th>salaryAmount</th>
+          <th>active</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let salary1 of salaries">         
+          <h1 *ngFor="let salary2 of salaries; let i = index">
+            <h1 *ngIf="salary2.employee.id == salary1.employee.id">
+              <td>{{salary2.employee.firstName+" "+salary2.employee.lastName}}</td>
+              <td>{{salary2.salaryYear}}</td>
+              <td>{{salary2.salaryMonth}}</td>
+              <td>{{salary2.salaryAmount}}</td>
+              <td>
+                <button (click)="deleteSalary(salary.id)" class="btn btn-danger">Delete</button>
+                <button (click)="updateSalary(salary.id)" class="btn btn-success"
+                  style="margin-left: 10px">Update</button>
+                <button (click)="salaryDetails(salary.id)" class="btn btn-info"
+                  style="margin-left: 10px">Details</button>
+              </td>
+            </h1>
+          </h1>        
+        </tr>        
+      </tbody>
+    </table>
+  </div>
+</div> --> 
+
+<!-- <h1>test message</h1>
+<ul *ngFor="let salary of salaries | async"> 
+  <li>{{ salary.employee.firstName }}</li>
+  <ul>
+   <li *ngFor="let employee of salary.employee"> 
+     {{ employee.firstName }}
+   </li>
+  </ul>
+</ul> -->
