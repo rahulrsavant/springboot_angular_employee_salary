@@ -6,4 +6,5 @@ export class Employee {
   lastName: string;
   emailId: string;
   salaries: Salary[];
+  
 }
